@@ -5,6 +5,12 @@ body {
     box-sizing: border-box;
 }
 
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
 header {
     background-color: #333;
     color: white;
@@ -25,7 +31,7 @@ nav a {
     padding: 5px;
 }
 
-section {
+.articles {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -33,7 +39,7 @@ section {
 }
 
 article {
-    width: 30%;
+    width: calc(33.33% - 20px);
     margin: 10px;
     border: 1px solid green;
     padding: 10px;
