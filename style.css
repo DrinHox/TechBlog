@@ -20,10 +20,11 @@ header {
 
 nav {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     background-color: black;
     padding: 10px;
+    flex-wrap: wrap;
 }
 
 nav a {
@@ -35,7 +36,7 @@ nav a {
 .search-container {
     display: flex;
     align-items: center;
-    margin-left: 1150px;
+    margin-left: 700px;
 }
 
 .search-container input[type="text"] {
@@ -49,6 +50,7 @@ nav a {
     color: white;
     border: none;
     cursor: pointer;
+    margin-left: 5px;
 }
 
 #signin-btn {
@@ -63,7 +65,7 @@ nav a {
 }
 
 article {
-    width: calc(25% - 20px);
+    width: calc(33.33% - 20px);
     margin: 10px;
     border: 1px solid green;
     padding: 10px;
@@ -87,8 +89,12 @@ footer {
     padding: 10px;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 768px) {
     article {
-        width: calc(50% - 20px);
+        width: 100%;
+    }
+    nav{
+        flex-direction: column;
+        align-items: flex-start;
     }
 }
