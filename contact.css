@@ -112,13 +112,13 @@ footer {
 
 button#signin-btn,
 button#register-btn {
-    padding: 10px 15px;
-    margin: 0 10px;
-    background-color: grey;
+    padding: 5px 0px;
+    margin: 0px;
+    background-color:black;
     color: white;
     border: none;
     cursor: pointer;
-    border-radius: 5px;
+    border-radius: 10px;
 }
 
 button#signin-btn:hover,
@@ -129,6 +129,7 @@ button#register-btn:hover {
 .buttons-container {
     display: flex;
     align-items: center;
+    flex-direction: column;
 }
 
 button#register-btn {

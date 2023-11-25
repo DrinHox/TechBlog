@@ -13,7 +13,7 @@ body {
 
 header {
     display: flex;
-  
+    justify-content: space-between;
     align-items: center;
     background-color: black;
     color: white;
@@ -22,8 +22,13 @@ header {
 }
 
 h1 {
-    margin: 15; 
+    margin: 15px; 
     flex: 1;
+}
+
+h2 {
+    text-align: center;
+    margin: 0;
 }
 
 nav {
@@ -97,7 +102,7 @@ article {
 
 footer {
     background-color: black;
-    color: red;
+    color: white;
     text-align: center;
     padding: 10px;
 }
@@ -125,13 +130,13 @@ footer {
 
 button#signin-btn,
 button#register-btn {
-    padding: 10px 15px;
-    margin: 0 10px;
-    background-color: grey;
+    padding: 5px 0px;
+    margin: 0px;
+    background-color:black;
     color: white;
     border: none;
     cursor: pointer;
-    border-radius: 5px;
+    border-radius: 10px;
 }
 
 button#signin-btn:hover,
@@ -141,9 +146,29 @@ button#register-btn:hover {
 
 .buttons-container {
     display: flex;
+    flex-direction: column;
     align-items: center;
 }
 
-button#register-btn {
-    margin-left: 10px;
+
+.slider-container {
+    width: 100%;
+    margin: auto;
+    
+}
+
+.slider {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+    min-width: 100%;
+    box-sizing: border-box;
+   
+}
+
+img {
+    width: 50%;
+    height: auto;
 }
