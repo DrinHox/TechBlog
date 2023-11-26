@@ -79,3 +79,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 });
+
+window.addEventListener('scroll', function() {
+    const scrollPosition = window.pageYOffset;
+    document.body.style.backgroundPositionY = -scrollPosition * 0.3 + 'px';
+});

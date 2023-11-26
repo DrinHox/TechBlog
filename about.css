@@ -3,6 +3,12 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    
+    background-image: url('images/Background_dots-lines.png');
+    background-size: cover;
+    background-attachment: fixed;
+    justify-content: center;
+    align-items: center;
 }
 
 .wrapper {

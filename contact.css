@@ -7,15 +7,12 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-
-@keyframes gradientAnimation {
-    0% {
-        background-position: 0 0;
-    }
-    100% {
-        background-position: 100% 100%;
-    }
+    
+    background-image: url('images/Background_dots-lines.png');
+    background-size: cover;
+    background-attachment: fixed;
+    justify-content: center;
+    align-items: center;
 }
 
 .wrapper {
