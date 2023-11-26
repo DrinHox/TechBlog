@@ -135,11 +135,25 @@ button#register-btn:hover {
 }
 
 .profile img {
-    width: 150px;
-    height: 150px;
+    max-width: 70%;
+    height: auto;
     border-radius: 50%;
     object-fit: cover;
     margin-bottom: 10px;
+    transition: transform 0.5s;
+}
+
+.profile img:hover {
+    animation: spin 1s forwards;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotateY(0deg);
+    }
+    100% {
+        transform: rotateY(360deg);
+    }
 }
 
 .profile .details {
@@ -165,8 +179,9 @@ button#register-btn:hover {
 }
 
 .social-links img {
-    width: 25px;
-    height: 25px;
+    width: 40px;
+    height: 40px;
+    margin-right: 10px; 
 }
 
 footer {
