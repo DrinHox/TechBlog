@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function() {
     function nextSlide() {
         count++;
         if (count >= slider.children.length -1) {
-            count = 1;
+            count = 0;
         }
         updateSlider();
     }
@@ -76,4 +76,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     updateSlider();
     resetSlideInterval();
+
+
 });

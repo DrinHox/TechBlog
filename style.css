@@ -105,6 +105,7 @@ footer {
     color: white;
     text-align: center;
     padding: 10px;
+    margin-top: auto;
 }
 
 @media screen and (max-width: 768px) {
@@ -130,7 +131,7 @@ footer {
 
 button#signin-btn,
 button#register-btn {
-    padding: 5px 0px;
+    padding: 5px 5px;
     margin: 0px;
     background-color:black;
     color: white;
@@ -152,7 +153,7 @@ button#register-btn:hover {
 
 .events-title {
     text-align: center;
-    margin-top: 20px; /* Adjust this value as needed */
+    margin-top: 10px; 
 }
 
 .dots {
