@@ -1,5 +1,3 @@
-
-
 document.addEventListener('DOMContentLoaded', function() {
     var signInButton = document.getElementById('signin-btn');
 
@@ -18,13 +16,12 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
-});
 
-document.addEventListener('DOMContentLoaded', function() {
+
     const slider = document.querySelector('.slider');
     const dotsContainer = document.querySelector('.dots');
-
     let count = 0;
+    let slideInterval;
 
     function nextSlide() {
         count++;
@@ -45,12 +42,15 @@ document.addEventListener('DOMContentLoaded', function() {
     function updateSlider() {
         slider.style.transform = `translateX(${-count * 100}%)`;
 
-        // Update active dot
         document.querySelectorAll('.dot').forEach(dot => dot.classList.remove('active'));
         document.querySelectorAll('.dot')[count].classList.add('active');
     }
 
-    // Create dots and slide buttons for each slide
+    function resetSlideInterval() {
+        clearInterval(slideInterval);
+        slideInterval = setInterval(nextSlide, 3000);
+    }
+
     for (let i = 0; i < slider.children.length; i++) {
         const dot = document.createElement('span');
         dot.classList.add('dot');
@@ -62,7 +62,18 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    updateSlider(); // Initialize the slider with the first slide
+    const previousArrow = document.querySelector('.previous');
+    const nextArrow = document.querySelector('.next');
 
-    setInterval(nextSlide, 3000);
+    previousArrow.addEventListener('click', () => {
+        previousSlide();
+        resetSlideInterval();
+    });
+    nextArrow.addEventListener('click', () => {
+        nextSlide();
+        resetSlideInterval();
+    });
+
+    updateSlider();
+    resetSlideInterval();
 });
