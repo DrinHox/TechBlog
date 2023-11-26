@@ -9,6 +9,15 @@ body {
     box-sizing: border-box;
 }
 
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 100% 100%;
+    }
+}
+
 .wrapper {
     display: flex;
     flex-direction: column;

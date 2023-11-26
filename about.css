@@ -134,13 +134,14 @@ button#register-btn:hover {
     text-align: center;
 }
 
+
 .profile img {
     max-width: 70%;
     height: auto;
     border-radius: 50%;
     object-fit: cover;
     margin-bottom: 10px;
-    transition: transform 0.5s;
+    transition: transform 0.5s ease-in-out;
 }
 
 .profile img:hover {
@@ -157,15 +158,19 @@ button#register-btn:hover {
 }
 
 .profile .details {
+    text-align: center;
     margin-bottom: 20px;
 }
 
 .profile h3 {
-    margin: 5px 0;
+    font-size: 1.2em;
+    margin-bottom: 5px 0;
 }
 
 .profile p {
-    margin: 5px 0;
+    margin-bottom: 3px;
+    font-size: 1em;
+    color: #555;
 }
 
 .social-links {
@@ -175,6 +180,7 @@ button#register-btn:hover {
 }
 
 .social-links a {
+    display: inline-block;
     margin: 0 5px;
 }
 
@@ -182,6 +188,11 @@ button#register-btn:hover {
     width: 40px;
     height: 40px;
     margin-right: 10px; 
+    transition: transform 0.3s ease-in-out;
+}
+
+.social-links img:hover {
+    transform: rotate(360deg);
 }
 
 footer {
