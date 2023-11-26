@@ -150,25 +150,73 @@ button#register-btn:hover {
     align-items: center;
 }
 
+.events-title {
+    text-align: center;
+    margin-top: 20px; /* Adjust this value as needed */
+}
+
+.dots {
+    text-align: center;
+}
+
+.dots .dot {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #bbb;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.dot.active {
+    background-color: #555;
+}
 
 .slider-container {
     width: 100%;
     margin: auto;
-    
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+}
+
+.slider-container {
+    display: flex;
+    justify-content: center; 
 }
 
 .slider {
     display: flex;
     transition: transform 0.5s ease-in-out;
+    justify-content: center; 
 }
 
 .slide {
     min-width: 100%;
     box-sizing: border-box;
-   
+    display: block; 
+    margin: 0 auto;
 }
 
 img {
     width: 50%;
     height: auto;
+}
+
+.previous,
+.next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+    cursor: pointer;
+}
+
+.previous{
+    left: 0;
+}
+
+.next{
+    right: 0;
 }
