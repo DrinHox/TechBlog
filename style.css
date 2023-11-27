@@ -235,3 +235,81 @@ img {
 .arrow:hover {
     color: #555;
 }
+
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.modal-content {
+    background-color: rgba(36, 7, 7, 0.7);
+    margin: 10% auto;
+    padding: 50px;
+    border: 1px solid rgb(255, 255, 255);
+    width: 80%;
+    max-width: 400px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    text-align: center;
+    flex-direction: column; 
+    align-items: center;
+    
+}
+
+.modal h2, .modal h3, .modal label {
+    color: orange;
+}
+
+
+.close-btn {
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.close-btn:hover {
+    background-color: #555;
+}
+
+
+
+
+label {
+    margin-bottom: 5px;
+}
+
+input {
+    padding: 8px;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+button[type="submit"] {
+    padding: 10px;
+    background-color: #0d17a9;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button[type="submit"]:hover {
+    background-color: green;
+}
+@media screen and (max-width: 480px) {
+    .modal-content {
+        width: 70%; 
+        padding: 20px; 
+        border: 5px solid black; 
+    }
+}
