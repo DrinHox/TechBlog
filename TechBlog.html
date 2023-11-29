@@ -234,8 +234,50 @@
                 <button class="close-btn" onclick="closeModal('register-modal')">Close</button>
             </div>
         </div>
+        <script>
 
-<p>drin hoxha</p>
+       /*     let emailRegex = /[a-z]+@+[a-z]+\.+
+            let passwortRegex = /[A-Z][a-z]{8,}\.
+
+            function validateForm(){
+                let emailInput=document.getElementByID('email');
+                let emailError = document.getElementById('email');  */
+                
+document.getElementById('signin-form').addEventListener('submit', function (event) {
+    if (!validateSignInForm()) {
+        event.preventDefault();
+    }
+});
+
+function validateSignInForm() {
+    const emailInput = document.getElementById('email');
+    const passwordInput = document.getElementById('password');
+
+    const email = emailInput.value.trim();
+    const password = passwordInput.value.trim();
+
+    
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+        alert('Invalid email format');
+        return false;
+    }
+
+    
+    const passwordRegex = /.{8,}/;
+    if (!passwordRegex.test(password)) {
+        alert('Password must be at least 8 characters long.');
+        return false;
+    }
+
+    return true;
+}
+
+                
+            }
+        </script>
+
+
         <footer>
             <p>&copy; 2023 Tech Blog. All rights reserved.</p>
         </footer>
