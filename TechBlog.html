@@ -199,85 +199,41 @@
             <div class="modal-content">
                 <h2>Sign In</h2>
                 <p></p>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <span id="emailError" style="color: red;"></span>
 
-                <form id="signin-form">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+                <span id="passwordError" style="color: red;"></span>
 
-                    <label for="username">E-mail:</label>
-                    <input type="text" id="email" name="email" required>
-
-                    <label for="password">Password:</label>
-                    <input type="password" id="password" name="password" required>
-
-                    <button type="submit">Sign In</button>
-                </form>
+                <button type="submit" onclick="validateSignInForm()">Submit</button>
                 <button class="close-btn" onclick="closeModal('signin-modal')">Close</button>
             </div>
         </div>
-
 
         <div id="register-modal" class="modal">
             <div class="modal-content">
                 <h2>Register</h2>
                 <h3>Register here to enjoy access to all our articles</h3>
 
-                <form id="register-form">
-
                     <label for="new-email">E-mail:</label>
                     <input type="email" id="new-email" name="new-email" required>
+                    <span id="newEmailError" style="color: red;"></span>
 
                     <label for="new-password">Password:</label>
                     <input type="password" id="new-password" name="new-password" required>
-                    <label for="conform-password">Confirm Passowrd:</label>
-                    <input type="password" id="confirm-password" name="confirm-password" required>
+                    <span id="newPasswordError" style="color: red;"></span>
 
-                    <button type="submit">Register</button>
-                </form>
+                    <label for="confirm-password">Confirm Password:</label>
+                    <input type="password" id="confirm-password" name="confirm-password" required>
+                    <span id="confirmPasswordError" style="color: red;"></span>
+
+                    <button type="submit" onclick="validateRegisterForm()">Submit</button>
+                
                 <button class="close-btn" onclick="closeModal('register-modal')">Close</button>
             </div>
         </div>
-        <script>
-
-       /*     let emailRegex = /[a-z]+@+[a-z]+\.+
-            let passwortRegex = /[A-Z][a-z]{8,}\.
-
-            function validateForm(){
-                let emailInput=document.getElementByID('email');
-                let emailError = document.getElementById('email');  */
-                
-document.getElementById('signin-form').addEventListener('submit', function (event) {
-    if (!validateSignInForm()) {
-        event.preventDefault();
-    }
-});
-
-function validateSignInForm() {
-    const emailInput = document.getElementById('email');
-    const passwordInput = document.getElementById('password');
-
-    const email = emailInput.value.trim();
-    const password = passwordInput.value.trim();
-
-    
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email)) {
-        alert('Invalid email format');
-        return false;
-    }
-
-    
-    const passwordRegex = /.{8,}/;
-    if (!passwordRegex.test(password)) {
-        alert('Password must be at least 8 characters long.');
-        return false;
-    }
-
-    return true;
-}
-
-                
-            }
-        </script>
-
 
         <footer>
             <p>&copy; 2023 Tech Blog. All rights reserved.</p>

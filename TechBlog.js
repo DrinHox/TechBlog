@@ -88,24 +88,93 @@ window.onclick = function (event) {
     }
 };
 
-let emailRegex = /^[A-Z][a-z]+@+\.+[a-z]{2,3}$/;
-let passwordRegex = /.{8,}/;
-
-function validateForm() {
+function validateSignInForm() {
     let emailInput = document.getElementById('email');
     let passwordInput = document.getElementById('password');
+    let emailError = document.getElementById('emailError');
+    let passwordError = document.getElementById('passwordError');
 
-    
-    let emailError = document.getElementById('nameError');
-    let passwordError = document.getElementById('emailError');
-
-    nameError.innerText = '';
     emailError.innerText = '';
+    passwordError.innerText = '';
 
-    if (!emailRegex.test(emailInput.value)) {
+    if (!validateEmail(emailInput.value)) {
         emailError.innerText = 'Invalid email format';
-        
+        return;
     }
 
+    if (!validatePassword(passwordInput.value)) {
+        passwordError.innerText = 'Password must be at least 8 characters long and contain one uppercase letter.';
+        return;
+    }
+    if (emailError.innerText === '' && passwordError.innerText === '') {
+        closeModal('signin-modal');
+        emailInput.value = '';
+        passwordInput.value = '';
+    }
+
+
 }
+
+function validateEmail(email) {
+
+    let emailRegex = /^[a-zA-Z0-9._+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    return emailRegex.test(email);
+}
+
+function validatePassword(password) {
+
+    let passwordRegex = /[a-zA-Z0-9]{8,}/;
+    return passwordRegex.test(password);
+
+}
+
+
+function validateRegisterForm() {
+    let newEmailInput = document.getElementById('new-email');
+    let newPasswordInput = document.getElementById('new-password');
+    let confirmPasswordInput = document.getElementById('confirm-password');
+    let newEmailError = document.getElementById('newEmailError');
+    let newPasswordError = document.getElementById('newPasswordError');
+    let confirmPasswordError = document.getElementById('confirmPasswordError');
+
+    newEmailError.innerText = '';
+    newPasswordError.innerText = '';
+    confirmPasswordError.innerText = '';
+
+    if (!validateEmail(newEmailInput.value)) {
+        newEmailError.innerText = 'Invalid email format';
+        return false;
+    }
+
+    if (!validatePassword(newPasswordInput.value)) {
+        newPasswordError.innerText = 'Password must be at least 8 characters long and contain one uppercase letter.';
+        return false;
+    }
+
+    if (newPasswordInput.value !== confirmPasswordInput.value) {
+        confirmPasswordError.innerText = 'Passwords do not match.';
+        return false;
+    }
+
+    if (newEmailError.innerText === '' && newPasswordError.innerText === '' && confirmPasswordError.innerText === '') {
+        closeModal('register-modal');
+        newEmailInput.value = '';
+        newPasswordInput.value = '';
+        confirmPasswordInput.value = '';
+    }
+}
+
+function validateEmail(email) {
+    let emailRegex = /^[a-zA-Z0-9._+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    return emailRegex.test(email);
+}
+
+function validatePassword(password) {
+    let passwordRegex = /[a-zA-Z0-9]{8,}/;
+    return passwordRegex.test(password);
+}
+
+
+
+
 
