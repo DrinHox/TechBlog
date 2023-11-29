@@ -248,7 +248,7 @@ img {
 }
 
 .modal-content {
-    background-color: rgba(36, 7, 7, 0.7);
+    background-color: rgba(240, 225, 225, 0.7);
     margin: 10% auto;
     padding: 50px;
     border: 1px solid rgb(255, 255, 255);
@@ -263,7 +263,7 @@ img {
 }
 
 .modal h2, .modal h3, .modal label {
-    color: orange;
+    color: black;
 }
 
 

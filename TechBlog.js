@@ -88,3 +88,24 @@ window.onclick = function (event) {
     }
 };
 
+let emailRegex = /^[A-Z][a-z]+@+\.+[a-z]{2,3}$/;
+let passwordRegex = /.{8,}/;
+
+function validateForm() {
+    let emailInput = document.getElementById('email');
+    let passwordInput = document.getElementById('password');
+
+    
+    let emailError = document.getElementById('nameError');
+    let passwordError = document.getElementById('emailError');
+
+    nameError.innerText = '';
+    emailError.innerText = '';
+
+    if (!emailRegex.test(emailInput.value)) {
+        emailError.innerText = 'Invalid email format';
+        
+    }
+
+}
+
