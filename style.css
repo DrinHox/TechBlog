@@ -37,6 +37,11 @@ h2 {
     margin: 0;
 }
 
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
 nav {
     display: flex;
     justify-content: space-between;
@@ -146,8 +151,8 @@ article {
 }
 
 .image-box {
-    height: 150px;
-    background-color: #ccc;
+    max-width: 100%;
+    height: auto;
     margin-bottom: 10px;
 }
 
