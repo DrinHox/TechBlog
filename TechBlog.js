@@ -177,4 +177,30 @@ function validatePassword(password) {
 
 
 
+document.addEventListener('DOMContentLoaded', function () {
 
+    const categories = document.querySelectorAll('.dropdown-content a');
+    categories.forEach(category => {
+        category.addEventListener('click', function (event) {
+            event.preventDefault();
+            const selectedCategory = this.dataset.category;
+
+            const articles = document.querySelectorAll('.articles article');
+            articles.forEach(article => {
+                const articleCategories = article.dataset.categories.split(' ');
+                if (selectedCategory === 'all' || articleCategories.includes(selectedCategory)) {
+                    article.style.display = 'block';
+                } else {
+                    article.style.display = 'none';
+                }
+            });
+        });
+    });
+    const mainCategoryBtn = document.getElementById('main-category');
+    mainCategoryBtn.addEventListener('click', function () {
+        const articles = document.querySelectorAll('.articles article');
+        articles.forEach(article => {
+            article.style.display = 'block';
+        });
+    });
+});
