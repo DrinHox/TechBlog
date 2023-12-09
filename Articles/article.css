@@ -181,6 +181,20 @@ nav a {
     }
 }
 
+.video-container {
+    position: relative;
+    width: 80%;
+    max-width: 800px; /* Max width for responsiveness */
+    margin: 0 auto; /* Center horizontally */
+}
+
+.video-container iframe {
+    
+    width: 640px; /* Occupy full width of container */
+    height: 280px; /* Maintain aspect ratio */
+    margin: 0 auto; /* Center horizontally */
+}
+
 footer {
     background-color: black;
     color: white;
