@@ -117,13 +117,15 @@ function validateSignInForm() {
 
 function validateEmail(email) {
 
-    let emailRegex = /^[a-zA-Z0-9._+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    let emailRegex =  /^[a-zA-Z0-9._%+-]+@[a-zA-Z]+\.[a-zA-Z]{2,}$/;
+
     return emailRegex.test(email);
 }
 
 function validatePassword(password) {
 
-    let passwordRegex = /[a-zA-Z0-9]{8,}/;
+    let passwordRegex = /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d).{8,}$/;
+
     return passwordRegex.test(password);
 
 }
@@ -164,13 +166,13 @@ function validateRegisterForm() {
     }
 }
 
-function validateEmail(email) {
-    let emailRegex = /^[a-zA-Z0-9._+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+function validateNewEmail(newEmailInput) {
+    let emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z]+\.[a-zA-Z]{2,}$/;
     return emailRegex.test(email);
 }
 
-function validatePassword(password) {
-    let passwordRegex = /[a-zA-Z0-9]{8,}/;
+function validateNewPassword(newPasswordInput) {
+    let passwordRegex = /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d).{8,}$/;
     return passwordRegex.test(password);
 }
 
