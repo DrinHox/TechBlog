@@ -7,16 +7,16 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function nextSlide() {
         count++;
-        if (count >= slider.children.length - 1) {
+        if (count >= slider.children.length) {
             count = 0;
         }
         updateSlider();
     }
-
+    
     function previousSlide() {
         count--;
         if (count < 0) {
-            count = slider.children.length - 2;
+            count = slider.children.length - 1;
         }
         updateSlider();
     }
