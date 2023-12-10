@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function nextSlide() {
         count++;
-        if (count >= slider.children.length) {
+        if (count >= slider.children.length -2) {
             count = 0;
         }
         updateSlider();
@@ -98,12 +98,12 @@ function validateSignInForm() {
     passwordError.innerText = '';
 
     if (!validateEmail(emailInput.value)) {
-        emailError.innerText = 'Invalid email format';
+        emailError.innerText = 'Invalid email format, email must contain "@" and and with "." & two or more characters';
         return;
     }
 
     if (!validatePassword(passwordInput.value)) {
-        passwordError.innerText = 'Password must be at least 8 characters long and contain one uppercase letter.';
+        passwordError.innerText = 'Password must be at least 8 characters long and contain at least one uppercase letter and number.';
         return;
     }
     if (emailError.innerText === '' && passwordError.innerText === '') {
@@ -111,8 +111,6 @@ function validateSignInForm() {
         emailInput.value = '';
         passwordInput.value = '';
     }
-
-
 }
 
 function validateEmail(email) {
@@ -130,7 +128,6 @@ function validatePassword(password) {
 
 }
 
-
 function validateRegisterForm() {
     let newEmailInput = document.getElementById('new-email');
     let newPasswordInput = document.getElementById('new-password');
@@ -144,12 +141,12 @@ function validateRegisterForm() {
     confirmPasswordError.innerText = '';
 
     if (!validateEmail(newEmailInput.value)) {
-        newEmailError.innerText = 'Invalid email format';
+        newEmailError.innerText = 'Invalid email format, email must contain "@" and and with "." & two or more characters';
         return false;
     }
 
     if (!validatePassword(newPasswordInput.value)) {
-        newPasswordError.innerText = 'Password must be at least 8 characters long and contain one uppercase letter.';
+        newPasswordError.innerText = 'Password must be at least 8 characters long and contain at least one uppercase letter and number.';
         return false;
     }
 
@@ -175,7 +172,6 @@ function validateNewPassword(newPasswordInput) {
     let passwordRegex = /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d).{8,}$/;
     return passwordRegex.test(password);
 }
-
 
 
 
