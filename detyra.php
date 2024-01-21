@@ -39,7 +39,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <title> Test Login Form</title>
 </head>
 <body>
-    <h2> Test Login Form</h2>
+    <h2> Test1 Login Form</h2>
     <?php if (isset($error)) { ?>
         <p><?php echo $error; ?></p>
     <?php } ?>
