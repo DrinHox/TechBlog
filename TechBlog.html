@@ -258,47 +258,49 @@
 
         </section>
 
-
         <div id="signin-modal" class="modal">
             <div class="modal-content">
                 <h2>Sign In</h2>
                 <p></p>
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-                <span id="emailError" style="color: red;"></span>
-
-                <label for="password">Password:</label>
-                <input type="password" id="password" name="password" required>
-                <span id="passwordError" style="color: red;"></span>
-
-                <button type="submit" onclick="validateSignInForm()">Submit</button>
+                <form action="login.php" method="post">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                    <span id="emailError" style="color: red;"></span>
+        
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" required>
+                    <span id="passwordError" style="color: red;"></span>
+        
+                    <button type="submit" onclick="validateSignInForm()">Submit</button>
+                </form>
                 <button class="close-btn" onclick="closeModal('signin-modal')">Close</button>
             </div>
         </div>
-
+        
         <div id="register-modal" class="modal">
             <div class="modal-content">
                 <h2>Register</h2>
                 <h3>Register here to enjoy access to all our articles</h3>
-
+                <form action="register.php" method="post">
                     <label for="new-email">E-mail:</label>
                     <input type="email" id="new-email" name="new-email" required>
                     <span id="newEmailError" style="color: red;"></span>
-
+        
                     <label for="new-password">Password:</label>
                     <input type="password" id="new-password" name="new-password" required>
                     <span id="newPasswordError" style="color: red;"></span>
-
+        
                     <label for="confirm-password">Confirm Password:</label>
                     <input type="password" id="confirm-password" name="confirm-password" required>
                     <span id="confirmPasswordError" style="color: red;"></span>
-
+        
                     <button type="submit" onclick="validateRegisterForm()">Submit</button>
-                
+                </form>
+        
                 <button class="close-btn" onclick="closeModal('register-modal')">Close</button>
             </div>
         </div>
-
+        
         <footer>
             <p>&copy; 2023/2024 Tech Blog. All rights reserved.</p>
         </footer>
