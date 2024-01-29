@@ -1,0 +1,313 @@
+<?php
+include('register.php');
+?>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Blog</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="TechBlog.js"></script>
+</head>
+
+<body>
+
+    <div class="wrapper">
+
+
+        <header>
+            <h1>TECHBLOG</h1>
+            <div class="buttons-container">
+
+                <button class="signin" id="signin-btn" onclick="openModal('signin-modal')">Sign In</button>
+                <button class="register" id="register-btn" onclick="openModal('register-modal')">Register</button>
+
+            </div>
+        </header>
+
+        <nav>
+            <div class="urllinks">
+                <a href="TechBlog.html">Home</a>
+                <a href="aboutUs.html">About Us</a>
+                <a href="contactUs.html">Contact Us</a>
+            </div>
+            <div class="dropdown">
+                <button class="dropbtn" id="main-category">Categories</button>
+                <div class="dropdown-content">
+                    <a href="#" data-category="mobile">Mobile Phones</a>
+                    <a href="#" data-category="computers">Computers</a>
+                    <a href="#" data-category="laptops">Laptops</a>
+                    <a href="#" data-category="cars">Car-Tech</a>
+                    <a href="#" data-category="ai">AI</a>
+                    <a href="#" data-category="rockets">Rocket Science</a>
+                </div>
+            </div>
+            <div class="search-container">
+                <input type="text" id="searchInput" placeholder="Search...">
+                <button type="submit" id="searchButton">Search</button>
+            </div>
+
+        </nav>
+
+            <h2 class="events-title">Live Tech Events</h2>
+
+            <div class="dots"></div>
+
+
+            <div class="slider-container">
+                <div class="slider">
+
+                    <div class="slide">
+                        <a href="https://www.apple.com/apple-events/" target="_blank">
+                            <img src="images/wwdc23.jpg" alt="WWSC23 Apple Event">
+                        </a>
+                    </div>
+
+                    <div class="slide">
+                        <a href="https://newyork.theaisummit.com/" target="_blank">
+                            <img src="images/aisummit.jpg" alt="The AI Summit New York">
+                        </a>
+                    </div>
+
+                    <div class="slide">
+                        <a href="https://ignite.microsoft.com/en-US/home/" target="_blank">
+                            <img src="images/microsoftignite.jpg" alt="Microsoft Ignite Event">
+                        </a>
+                    </div>
+
+                    <div class="slide">
+                        <a href="https://www.cybersecuritycloudexpo.com/global/" target="_blank">
+                            <img src="images/techexcyber.JPG" alt="Cyber Security & Cloud Expo">
+                        </a>
+                    </div>
+
+                    <div class="slide">
+                        <a href="https://www.iottechexpo.com/global/" target="_blank">
+                            <img src="images/iottechexpo.jpg" alt="IOT Tech Expo Global">
+                        </a>
+                    </div>
+
+                </div>
+                <button class="arrow previous">&#8249;</button>
+                <button class="arrow next">&#8250;</button>
+            </div>
+
+
+        <section class="articles">
+
+            <article data-categories="laptops">
+                <div class="article-content">
+                    <a href="Articles/1/article1.html">
+                        <div class="image-box"><img src="https://www.pcworld.com/wp-content/uploads/2023/12/bf-laptop-deals-pcw.jpg?resize=1024%2C682&quality=50&strip=all" alt="Laptops"></div>
+                        <h2>Best laptop deals from budget to extreme</h2>
+                        <p>These are the best deals on home use laptops, gaming laptops, and Chromebooks we can find, updated every weekday. -By Ashley Biancuzzo @PCWorld</p>
+                    </a>
+                </div>
+            </article>
+
+            <article data-categories="mobile">
+                <div class="article-content">
+                    <a href="Articles/2/article2.html">
+                        <div class="image-box"><img src="https://www.techadvisor.com/wp-content/uploads/2023/12/best-smartphones.jpg?resize=1024%2C576&quality=50&strip=all" alt="Smartphones"></div>
+                        <h2>The best phones of 2023</h2>
+                        <p>You can't go wrong with any of those 10...</p>
+                    </a>
+                </div>
+            </article>
+
+            <article data-categories="cars">
+                <div class="article-content">
+                    <a href="Articles/3/article3.html">
+                        <div class="image-box"><img src="https://autotech.news/wp-content/uploads/2023/12/Many-modern-cars-watch-occupants-In-Vehicle-Cabin-Camera-%E2%80%93-Courtesy-LG.webp" alt="Inside Car View High Tech"></div>
+                        <h2>Future Car Tech!</h2>
+                        <p>Your car might be watching you to keep you safe − at the expense of your privacy</p>
+                    </a>
+                </div>
+            </article>
+
+            <article data-categories="rockets">
+                <div class="article-content">
+                    <a href="Articles/4/article4.html">
+                        <div class="image-box"><img src="https://images.theconversation.com/files/446994/original/file-20220217-13-d3tz1j.jpg?ixlib=rb-1.1.0&rect=407%2C592%2C2377%2C1185&q=45&auto=format&w=668&h=324&fit=crop" alt="International Space Station Image"></div>
+                        <h2>International Space Station: News</h2>
+                        <p>How Nasa plans to destroy it – and the dangers involved</p>
+                    </a>
+                </div>
+            </article>
+
+            <article data-categories="ai">
+                <div class="article-content">
+                    <a href="Articles/5/article5.html">
+                        <div class="image-box"><img src="https://ichef.bbci.co.uk/news/976/cpsprodpb/7610/production/_131942203_gemini_mm_02.png.webp" alt="AI Image"></div>
+                        <h2>Google Gemini AI</h2>
+                        <p>Google claims new Gemini AI 'thinks more carefully'</p>
+                    </a>
+                </div>
+            </article>
+
+            <article data-categories="computers">
+                <div class="article-content">
+                    <a href="Articles/6/article6.html">
+                        <div class="image-box"><img src="https://cdn.mos.cms.futurecdn.net/CwDeQKGvH85HmFRjDU4NeN-650-80.jpg.webp" alt="Nvidia Factory"></div>
+                        <h2>Nvidia looking for alternative chip production facility</h2>
+                        <p>Nvidia reportedly eyeing Vietnam for future chip production as chipmakers look for China alternatives</p>
+                    </a>
+                </div>
+            </article>
+
+            <article data-categories="cars">
+                <div class="article-content">
+                    <a href="Articles/7/article7.html">
+                        <div class="image-box"><img src="https://autotech.news/wp-content/uploads/2023/03/Xpeng-Thermal-management-system-1536x804.jpg" alt="Car Image with futuristic inside view of Batteries and insides."></div>
+                        <h2>Future EV Tech</h2>
+                        <p>Future Technologies, Materials, and Markets for Thermal Management of EVs</p>
+                    </a>
+                </div>
+            </article>
+
+            <article data-categories="laptops">
+                <div class="article-content">
+                    <a href="Articles/8/article8.html">
+                        <div class="image-box"><img src="https://www.techspot.com/images2/news/bigimage/2017/01/2017-01-02-image-3-j.webp" alt="Acer's Predator 21 X Laptop"></div>
+                        <h2>Acer's $9000 Laptop!</h2>
+                        <p>Acer's Predator 21 X is $9,000 gaming laptop with a curved screen</p>
+                    </a>
+                </div>
+            </article>
+
+            <article data-categories="mobile">
+                <div class="article-content">
+                    <a href="Articles/9/article9.html">
+                        <div class="image-box"><img src="https://asia-exstatic-vivofs.vivo.com/PSee2l50xoirPK7y/activity/1701945778805/zip/img/webp/section2-pic1.jpg.webp" alt="vivo X100 image"></div>
+                        <h2>Vivo X100 Revealed</h2>
+                        <p>Vivo X100, X100 Pro's global launch date revealed</p>
+                    </a>
+                </div>
+            </article>
+
+            <article data-categories="rockets">
+                <div class="article-content">
+                    <a href="Articles/10/article10.html">
+                        <div class="image-box"><img src="https://cdnuploads.aa.com.tr/uploads/Contents/2020/05/30/thumbs_b_c_a4a6996640e91d4ff86a71f5d9d9f84b.jpg?v=225920" alt="SpaceX Rocket"></div>
+                        <h2>SpaceX news!</h2>
+                        <p>SpaceX sends up Space Coast's 66th launch of the year</p>
+                    </a>
+                </div>
+            </article>
+
+            <article data-categories="ai">
+                <div class="article-content">
+                    <a href="Articles/11/article11.html">
+                        <div class="image-box"><img src="https://www.aljazeera.com/wp-content/uploads/2023/12/image-1702109605.jpg?resize=730%2C410&quality=80" alt="Israeli bombing on Gaza advanced by AI"></div>
+                        <h2>The Gospel: Israel turns to a new AI system in the Gaza war</h2>
+                        <p>The role of AI-enhanced warfare in the killing fields of Gaza. Plus, Mariam Barghouti on the intensifying violence in the West Bank.</p>
+                    </a>
+                </div>
+            </article>
+
+            <article data-categories="computers">
+                <div class="article-content">
+                    <a href="Articles/12/article12.html">
+                        <div class="image-box"><img src="https://cdn.wccftech.com/wp-content/uploads/2023/08/AMD-Intel-NVIDIA-728x419.png" alt="Image of modern GPU's"></div>
+                        <h2>PC GPU Market Is Back In The Green In Q3 2023</h2>
+                        <p>As Segment Sees 16.8% Growth, Graphics Cards Climb Above 37%</p>
+                    </a>
+                </div>
+            </article>
+
+            <article data-categories="cars">
+                <div class="article-content">
+                    <a href="Articles/13/article13.html">
+                    <div class="image-box"><img src="https://cdn.motor1.com/images/mgl/g4lLJP/s3/genesis-electrified-gv70-at-electrify-america-fast-charging-station.webp" alt="Car in Electric Chagring Station"></div>
+                        <div class="image-box"></div>
+                        <h2>Drivers Spent Nearly Twice The Time At Free DC Chargers Than At Paid Ones</h2>
+                        <p>Are free DC fast chargers really working out as intended? Yes and no.</p>
+                    </a>
+                </div>
+            </article>
+
+            <article data-categories="mobile">
+                <div class="article-content">
+                    <a href="Articles/14/article14.html">
+                        <div class="image-box"><img src="https://m-cdn.phonearena.com/images/article/153349-wide-two_940/Galaxy-Z-Fold-6-and-Flip-6-could-see-more-changes-than-just-bigger-screens.webp?1702048145" alt="Galaxy Z Fold 6 and Flip 6"></div>
+                        <h2>Galaxy Z Fold 6 and Flip 6 Changes</h2>
+                        <p>Galaxy Z Fold 6 and Flip 6 could see more changes than just bigger screens</p>
+                    </a>
+                </div>
+            </article>
+
+            <article data-categories="rockets">
+                <div class="article-content">
+                    <a href="Articles/15/article15.html">
+                        <div class="image-box"><img src="https://www.reuters.com/resizer/F-vbvwXDOSPsDVRkA0Pc1gCDtQQ=/960x0/filters:quality(80)/cloudfront-us-east-2.images.arcpublishing.com/reuters/FJ5QHJXCGFIKRL2FWU7E6WWPP4.jpg" alt="China LandSpace's Rocket Image"></div>
+                        <h2>China LandSpace's Rockets!</h2>
+                        <p>China LandSpace's methane-powered rocket sends satellites into orbit</p>
+                    </a>
+                </div>
+            </article>
+
+            <article data-categories="laptops">
+                <div class="article-content">
+                    <a href="Articles/16/article16.html">
+                    <div class="image-box"><img src="https://media.wired.com/photos/6465605ec30f50376ee87440/master/w_960,c_limit/Take%20Your%20Ultrawide%20Monitors%20Everywhere%20With%20an%20AR%20Laptop%201%20Gear.jpg" alt="AR Monitors for Laptop Image"></div>
+                        <div class="image-box"></div>
+                        <h2>Take Your Ultrawide Monitors Everywhere With an AR Laptop</h2>
+                        <p>Leave the portable monitor at home. Spacetop’s AR laptop lets you flick through as many screens as you want.</p>
+                    </a>
+                </div>
+            </article>
+
+        </section>
+
+        <div id="signin-modal" class="modal">
+            <div class="modal-content">
+                <h2>Sign In</h2>
+                <p></p>
+                <form action="login.php" method="post">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                    <span id="emailError" style="color: red;"></span>
+        
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" required>
+                    <span id="passwordError" style="color: red;"></span>
+        
+                    <button type="submit" onclick="validateSignInForm()">Submit</button>
+                </form>
+                <button class="close-btn" onclick="closeModal('signin-modal')">Close</button>
+            </div>
+        </div>
+        
+        <div id="register-modal" class="modal">
+            <div class="modal-content">
+                <h2>Register</h2>
+                <h3>Register here to enjoy access to all our articles</h3>
+                <form action="register.php" method="post">
+                    <label for="new-email">E-mail:</label>
+                    <input type="email" id="new-email" name="new-email" required>
+                    <span id="newEmailError" style="color: red;"></span>
+        
+                    <label for="new-password">Password:</label>
+                    <input type="password" id="new-password" name="new-password" required>
+                    <span id="newPasswordError" style="color: red;"></span>
+        
+                    <label for="confirm-password">Confirm Password:</label>
+                    <input type="password" id="confirm-password" name="confirm-password" required>
+                    <span id="confirmPasswordError" style="color: red;"></span>
+        
+                    <button type="submit" onclick="validateRegisterForm()">Submit</button>
+                </form>
+        
+                <button class="close-btn" onclick="closeModal('register-modal')">Close</button>
+            </div>
+        </div>
+        
+        <footer>
+            <p>&copy; 2023/2024 Tech Blog. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+
+</html>

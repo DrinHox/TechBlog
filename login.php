@@ -9,29 +9,34 @@ $database = "techblogdatabase";
 
 $conn = new mysqli($servername, $username, $password, $database);
 
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["login"])) {
     $email = $_POST["email"];
     $password = $_POST["password"];
 
-    $sql = "SELECT id, email, password FROM users WHERE email='$email'";
-    $result = $conn->query($sql);
+    // Validate input (you can add more validation as needed)
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        echo "Invalid email format";
+        return;
+    }
 
-    if ($result->num_rows == 1) {
+    // Check user credentials against the database
+    $selectQuery = "SELECT * FROM users WHERE email = '$email'";
+    $result = $conn->query($selectQuery);
+
+    if ($result->num_rows > 0) {
         $row = $result->fetch_assoc();
-        if (password_verify($password, $row["password"])) {
+        $hashedPassword = $row["password"];
+
+        if (password_verify($password, $hashedPassword)) {
             echo "Login successful!";
-            // Store user information in session
-            $_SESSION["user_id"] = $row["id"];
-            $_SESSION["user_email"] = $row["email"];
+            header("Location: dashboard.php"); // Replace "dashboard.php" with your desired page
+            exit();
         } else {
-            echo "Invalid password.";
+            echo "Invalid password";
         }
     } else {
-        echo "User not found.";
+        echo "User not found";
     }
 }
 
